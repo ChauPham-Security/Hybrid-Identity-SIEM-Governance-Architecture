@@ -123,3 +123,85 @@ Custom KQL-based detections were developed to monitor identity risk.
 ```kql
 AuditLogs
 | where OperationName contains "Add member to role"
+```
+
+
+### Brute Force Login Detection
+
+```kql
+SigninLogs
+| where ResultType != 0
+| summarize FailedAttempts=count() by UserPrincipalName, bin(TimeGenerated, 5m)
+| where FailedAttempts > 5
+```
+
+### Admin Role Activation Monitoring
+
+```kql
+AuditLogs
+| where OperationName contains "Activate eligible role"
+```
+
+### Suspicious VM Login Attempts
+
+```kql
+SecurityEvent
+| where EventID == 4625
+| summarize count() by Account, bin(TimeGenerated, 5m)
+```
+---
+
+## Step 6 — Governance & Risk Dashboard
+
+A Microsoft Sentinel workbook was created to visualize:
+
+- Failed login trends  
+- Role assignment changes  
+- Privileged role activations  
+- Risky sign-in activity  
+- Hybrid workload alerts  
+
+This dashboard simulates executive-level identity risk reporting.
+
+---
+
+## Zero Trust Alignment
+
+This architecture aligns with core Zero Trust principles:
+
+- **Verify explicitly** → MFA + Conditional Access  
+- **Use least privilege** → Group-based RBAC + Just-In-Time (JIT) admin  
+- **Assume breach** → Continuous SIEM monitoring  
+- **Limit blast radius** → Removal of persistent administrative roles  
+
+---
+
+## Business & Security Impact
+
+This implementation achieved:
+
+- Reduced administrative attack surface  
+- Centralized hybrid identity telemetry  
+- Improved detection of credential abuse attempts  
+- Increased audit and compliance visibility  
+- Enhanced governance reporting capabilities  
+
+---
+
+## Skills Demonstrated
+
+- Identity Governance & Access Lifecycle Design  
+- Azure RBAC Architecture  
+- Conditional Access Engineering  
+- Privileged Identity Management (JIT)  
+- Hybrid Cloud Security Integration  
+- Microsoft Sentinel (SIEM) Engineering  
+- KQL Detection Development  
+- Governance Reporting & Risk Modeling  
+
+---
+
+## Executive Summary
+
+This project demonstrates how an identity-first architecture can reduce risk in a hybrid cloud environment by centralizing identity governance, enforcing least privilege, integrating identity and infrastructure telemetry into Microsoft Sentinel, and providing measurable security visibility through detection engineering and governance reporting.
+

@@ -3,6 +3,9 @@
 
 ---
 
+<img width="966" height="695" alt="Screenshot 2026-02-18 at 6 40 28 PM" src="https://github.com/user-attachments/assets/b27cd76e-b179-4de7-917d-22caacdf1034" />
+
+
 ## Overview
 
 This project demonstrates the design and implementation of a hybrid identity-first security architecture using Microsoft Azure.

@@ -3,7 +3,8 @@
 
 ---
 
-<img width="966" height="695" alt="Screenshot 2026-02-18 at 6 40 28 PM" src="https://github.com/user-attachments/assets/b27cd76e-b179-4de7-917d-22caacdf1034" />
+<img width="1000" height="675" alt="Screenshot 2026-02-18 at 6 43 42 PM" src="https://github.com/user-attachments/assets/be2d0315-c8a2-47b2-85a4-8183aeb4414c" />
+
 
 
 ## Overview
